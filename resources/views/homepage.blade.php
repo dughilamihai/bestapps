@@ -29,7 +29,7 @@
           <p>
             <a href="#" class="btn btn-primary my-2">Add You app</a>
             <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-            @livewire('counter')
+            <livewire:counter/>
           </p>
         </div>
       </section>
