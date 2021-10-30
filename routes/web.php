@@ -13,6 +13,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
+$domain =request()->getSchemeAndHttpHost();
+
+switch($domain){
+    case env('DOMAIN_DE'):
+        $locale = 'de';
+        break;
+    case env('DOMAIN_RO'):
+        $locale = 'ro';
+        break;
+    case 'DOMAIN_COM':
+        $locale = 'en';
+        break;
+    default:
+        $locale = 'en';
+};
+$locale = 'en';
+App::setlocale($locale);
+
 //Static pages
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name('homepage');
 
